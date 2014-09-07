@@ -1,0 +1,33 @@
+snippet logstderr "Print dummy log var to stderr"
+import sys; print >>sys.stderr, "\n-------\n ${1:varname}: %s \n-------\n" % $1
+endsnippet
+
+snippet logging "Print using logging pprint message"
+import pprint; logging.debug("\n-------\n${1:varname}: %s \n-------\n" % pprint.pformat($1))
+endsnippet
+
+snippet logformat "pathname and lineno in logformat"
+"format": '%(asctime)s => (%(process)d) %(pathname)s %(lineno)d [%(levelname)s] %(message)s'
+endsnippet
+
+snippet dcsession "dc dc db session" i
+self.app.db
+endsnippet
+
+snippet dcquery "dc query" i
+self.app.db.query(${1:varname})
+endsnippet
+
+snippet dcapi "dc api decorator"
+@simple_access
+@gen.coroutine
+endsnippet
+
+snippet dclog "dc logging"
+self.app.log.
+endsnippet
+
+snippet ipython "ipython debugging"
+from IPython import embed; embed()
+endsnippet
+

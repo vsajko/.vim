@@ -1,0 +1,9 @@
+killall
+psql
+param
+rtype
+dc
+str
+datestr
+datetime
+utc

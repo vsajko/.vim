@@ -1,0 +1,1 @@
+:%w !xmlstarlet sel -T -t -m '//cat[not(child::cat)]/ancestor-or-self::*/sql/query' -v '.' -n -o '________' -n > xmlstarletout.txt
