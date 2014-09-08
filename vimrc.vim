@@ -42,7 +42,7 @@ NeoBundle 'https://github.com/Shougo/vimfiler.vim.git'
 NeoBundle 'https://github.com/Shougo/vimproc.vim', {'name': 'vimproc', 'build': {'unix': g:make}}
 NeoBundle 'https://github.com/Shougo/vimshell.vim.git'
 NeoBundle 'https://github.com/SirVer/ultisnips.git'
-NeoBundle 'https://github.com/Valloric/YouCompleteMe'
+NeoBundle 'https://github.com/Valloric/YouCompleteMe', {'build': {'unix': './install.sh'}}
 NeoBundle 'https://github.com/airblade/vim-rooter.git', {'name': 'rooter'}
 NeoBundle 'https://github.com/aklt/plantuml-syntax.git'
 NeoBundle 'https://github.com/alfredodeza/pytest.vim.git'
