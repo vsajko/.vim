@@ -259,7 +259,7 @@ set undofile
 set wildmenu
 set title
 
-set complete=.,w,b,u,t,i,k
+set complete=.,w,b,u,t,k
 
 command Scratch :new | setlocal buftype=nofile bufhidden=hide noswapfile | normal <C-W><S-J>
 command TabScratch :tabedit | setlocal buftype=nofile bufhidden=hide noswapfile
@@ -506,4 +506,7 @@ endfunction
 
 nmap <silent> <leader>- :call ToggleLine()<cr>
 
-
+inoremap <c-x><Char-46> :set iskeyword+=.<cr>a<c-n>
+inoremap <c-x><Char-45> :set iskeyword+=-<cr>a<c-n>
+autocmd CompleteDone * set iskeyword-=.
+autocmd CompleteDone * set iskeyword-=-
