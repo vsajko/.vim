@@ -512,4 +512,4 @@ inoremap <c-x><Char-46> :set iskeyword+=.<cr>a<c-n>
 inoremap <c-x><Char-45> :set iskeyword+=-<cr>a<c-n>
 autocmd CompleteDone * set iskeyword-=.
 autocmd CompleteDone * set iskeyword-=-
-# end
+
