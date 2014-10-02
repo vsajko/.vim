@@ -156,7 +156,7 @@ nmap <silent><buffer> <C-S-Up> <Plug>VimwikiDiaryPrevDay
 nmap <silent><buffer> <C-S-Down> <Plug>VimwikiDiaryNextDay
 
 "notes
-let g:notesRoot = $HOME . '/.vim_private/vimnotes'
+let g:notesRoot = $HOME . '/.dotfiles_private/dots/.vim_private/vimnotes'
 let g:notesFileExtension='.md'
 let g:notesFileType = 'markdown'
 let g:notesWordSeparator = '_'
@@ -672,8 +672,9 @@ noremap <F12> :<C-u>Unite -start-insert buffer:- file_rec<CR>
 noremap <F10> :<C-u>Unite -start-insert tab buffer<CR>
 noremap <S-F10> :<C-u>Unite -start-insert file:%:h<CR>
 noremap <F1> :<C-u>Unite -start-insert file_mru<CR>
-command! Ch Unite change -auto-preview
-command! Ju Unite jump -auto-preview
+command! Uc Unite change -auto-preview
+command! Uj Unite jump -auto-preview
+command! Ur UniteResume
 let g:unite_converter_file_directory_width=120
 let g:unite_source_tag_max_fname_length=120
 autocmd FileType unite call s:unite_my_settings()

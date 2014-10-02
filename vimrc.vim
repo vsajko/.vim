@@ -1,8 +1,10 @@
 set nocompatible
 set runtimepath+=~/.vim/neobundle/neobundle.vim/
+set runtimepath+=~/.dotfiles_private/dots/.vim_private/
 
 " Required:
 call neobundle#begin(expand('~/.vim/neobundle/'))
+let g:neobundle#log_filename='/home/vsajko/.vim/neobundle/neobundle.log'
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -28,7 +30,6 @@ NeoBundle 'https://github.com/AndrewRadev/writable_search.vim.git'
 NeoBundle 'https://github.com/Chiel92/vim-autoformat.git', {'name': 'autoformat'}
 NeoBundle 'https://github.com/JarrodCTaylor/vim-python-test-runner.git', {'name': 'python-test-runner'}
 NeoBundle 'https://github.com/LStinson/TagmaTips.git'
-NeoBundle 'https://github.com/Marslo/marslo.vim.git', {'name': 'colors-marslo'}
 NeoBundle 'https://github.com/Pychimp/vim-luna.git', {'name': 'colors-luna'}
 NeoBundle 'https://github.com/Pychimp/vim-sol.git', {'name': 'colors-sol'}
 NeoBundle 'https://github.com/Shougo/context_filetype.vim.git'
@@ -42,7 +43,8 @@ NeoBundle 'https://github.com/Shougo/vimfiler.vim.git'
 NeoBundle 'https://github.com/Shougo/vimproc.vim', {'name': 'vimproc', 'build': {'unix': g:make}}
 NeoBundle 'https://github.com/Shougo/vimshell.vim.git'
 NeoBundle 'https://github.com/SirVer/ultisnips.git'
-NeoBundle 'https://github.com/Valloric/YouCompleteMe', {'build': {'unix': './install.sh'}}
+" NeoBundle 'https://github.com/Valloric/YouCompleteMe', {'build': {'unix': './install.sh'}}
+NeoBundle 'https://github.com/Valloric/YouCompleteMe'
 NeoBundle 'https://github.com/airblade/vim-rooter.git', {'name': 'rooter'}
 NeoBundle 'https://github.com/aklt/plantuml-syntax.git'
 NeoBundle 'https://github.com/alfredodeza/pytest.vim.git'
@@ -134,7 +136,7 @@ NeoBundle 'https://github.com/voithos/vim-python-matchit.git', {'name': 'python-
 NeoBundle 'https://github.com/vsajko/Asciitable.vim.git'
 NeoBundle 'https://github.com/vsajko/BlockDiff.git'
 NeoBundle 'https://github.com/vsajko/sessionman.vim.git'
-NeoBundle 'https://github.com/xolox/vim-misc.git', {'name': 'misc'}
+NeoBundle 'https://github.com/xolox/vim-misc.git', {'name': 'misc_xolox'}
 
 call neobundle#end()
 
@@ -449,7 +451,7 @@ so ~/.vim/myminiplugs/toolkitgrep.vim
 so ~/.vim/myminiplugs/myminigrep.vim
 so ~/.vim/myminiplugs/indentmove.vim
 so ~/.vim/myminiplugs/prettydump.vim
-so ~/.vim/myminiplugs/vcd.vim
+" so ~/.vim/myminiplugs/vcd.vim
 so ~/.vim/myminiplugs/uuid.vim
 so ~/.vim/myminiplugs/splitjoin.vim
 so ~/.vim/myminiplugs/keywordreplace.vim
