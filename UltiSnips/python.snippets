@@ -31,6 +31,12 @@ snippet ipython "ipython debugging"
 from IPython import embed; embed()
 endsnippet
 
-snippet "banana jabuka"
-banana i jabuka
+snippet "rpdb2"
+import rpdb2
+rpdb2.start_embedded_debugger("${1:xxx}", fAllowUnencrypted=True, fAllowRemote=True)
+endsnippet
+
+snippet "remote_pdb"
+from remote_pdb import RemotePdb
+RemotePdb(host='10.${1:ip}', port=4444).set_trace()
 endsnippet
