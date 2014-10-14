@@ -43,7 +43,7 @@ highlight FoldColumn guifg=#9a9a9a guibg=bg gui=NONE
 highlight Folded guifg=#FFE55F guibg=bg gui=NONE
 highlight IncSearch guifg=#dadada guibg=#a7380e gui=NONE
 highlight LineNr guifg=#7a7a7a guibg=#101010 gui=NONE
-highlight MatchParen guifg=red guibg=bg gui=bold
+highlight MatchParen guifg=orange guibg=bg gui=bold
 highlight ModeMsg guifg=fg guibg=bg gui=bold
 highlight MoreMsg guifg=#b5b5b5 guibg=bg gui=bold
 highlight NonText guifg=#005f87 guibg=bg gui=NONE

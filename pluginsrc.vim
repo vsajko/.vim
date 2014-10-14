@@ -799,6 +799,8 @@ highlight BookmarkLineDefault guibg=#6b0b0b gui=NONE
 highlight BookmarkAnnotationLineDefault guibg=#6b0b0b gui=NONE
 
 
+" markology
+let g:markology_enable=0
 
 
 

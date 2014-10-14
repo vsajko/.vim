@@ -61,7 +61,6 @@ NeoBundle 'https://github.com/embear/vim-localvimrc.git', {'name': 'localvimrc'}
 NeoBundle 'https://github.com/exu/pgsql.vim.git'
 NeoBundle 'https://github.com/glts/vim-textobj-comment.git', {'name': 'textobj-comment'}
 NeoBundle 'https://github.com/glts/vim-textobj-indblock.git', {'name': 'textobj-indblock'}
-NeoBundle 'https://github.com/gregsexton/gitv.git'
 NeoBundle 'https://github.com/greyblake/vim-preview.git', {'name': 'preview'}
 NeoBundle 'https://github.com/heavenshell/vim-pydocstring.git', {'name': 'pydocstring'}
 NeoBundle 'https://github.com/honza/vim-snippets.git', {'name': 'ultisnip-snippets'}
@@ -107,15 +106,16 @@ NeoBundle 'https://github.com/thinca/vim-qfreplace.git', {'name': 'qfreplace'}
 NeoBundle 'https://github.com/thinca/vim-ref.git', {'name': 'ref'}
 NeoBundle 'https://github.com/thinca/vim-textobj-between.git', {'name': 'textobj-between'}
 NeoBundle 'https://github.com/timcharper/textile.vim.git'
-NeoBundle 'https://github.com/tommcdo/vim-fugitive-blame-ext.git', {'name': 'fugitive-blame-ext'}
 NeoBundle 'https://github.com/tpope/vim-commentary.git', {'name': 'commentary'}
 NeoBundle 'https://github.com/tpope/vim-dispatch.git', {'name': 'dispatch'}
-NeoBundle 'https://github.com/tpope/vim-fugitive', {'name': 'fugitive',  'augroup' : 'fugitive'}
 NeoBundle 'https://github.com/tpope/vim-pathogen.git', {'name': 'pathogen'}
 NeoBundle 'https://github.com/tpope/vim-repeat.git', {'name': 'repeat'}
 NeoBundle 'https://github.com/tpope/vim-scriptease.git', {'name': 'scriptease'}
 NeoBundle 'https://github.com/tpope/vim-speeddating.git', {'name': 'speeddating'}
 NeoBundle 'https://github.com/tpope/vim-surround.git', {'name': 'surround'}
+NeoBundle 'https://github.com/tpope/vim-fugitive', {'name': 'fugitive',  'augroup' : 'fugitive'}
+NeoBundle 'https://github.com/tommcdo/vim-fugitive-blame-ext.git', {'name': 'fugitive-blame-ext'}
+NeoBundle 'https://github.com/gregsexton/gitv.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/ujihisa/unite-font.git'
 NeoBundle 'https://github.com/vim-scripts/ColorSchemeEditor.git'
@@ -137,6 +137,10 @@ NeoBundle 'https://github.com/vsajko/Asciitable.vim.git'
 NeoBundle 'https://github.com/vsajko/BlockDiff.git'
 NeoBundle 'https://github.com/vsajko/sessionman.vim.git'
 NeoBundle 'https://github.com/xolox/vim-misc.git', {'name': 'misc_xolox'}
+NeoBundle 'https://github.com/chriskempson/tomorrow-theme.git', {'rtp': 'vim'}
+NeoBundle 'https://github.com/romainl/Disciple.git', {'name': 'colors-disciple'}
+NeoBundle 'https://github.com/romainl/Apprentice.git', {'name': 'colors-apprentice'}
+NeoBundle 'https://github.com/danro/rename.vim.git'
 
 call neobundle#end()
 
@@ -378,6 +382,7 @@ command! FTphp silent! execute "setlocal filetype=php"
 command! FTvim silent! execute "setlocal filetype=vim"
 command! FTsql silent! execute "setlocal filetype=sql"
 command! FTtxt silent! execute "setlocal filetype=txt"
+command! FTjson silent! execute "setlocal filetype=json"
 
 " Add the virtualenv's site-packages to vim path
 " http://www.sontek.net/blog/detail/python-with-a-modular-ide-vim
