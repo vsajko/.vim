@@ -1,23 +1,26 @@
-function! CreateKdeDesktopFile()
+function! CreateDesktopFile()
     if has("gui_running")
         let mylist =[ '[Desktop Entry]' ]
-        call add( mylist, 'ServiceTypes=text/plain')
-        call add( mylist, 'Actions=openInGvim_' . v:servername )
-        call add( mylist, '' )
-
-        call add( mylist, '[Desktop Action openInGvim_' . v:servername . ']')
-        call add( mylist, 'Name=openInGvim_' . v:servername )
-        call add( mylist, 'Icon=background')
+        call add( mylist, 'Encoding=UTF-8')
+        call add( mylist, 'Name=Gvim ' . v:servername)
+        call add( mylist, 'Comment=Gvim editor')
+        call add( mylist, 'GenericName=Gvim editor')
+        call add( mylist, 'X-GNOME-FullName=Gvim')
+        call add( mylist, 'Terminal=false')
+        call add( mylist, 'X-MultipleArgs=false')
+        call add( mylist, 'Type=Application')
+        call add( mylist, 'Icon=/home/vsajko/src/vim/runtime/vim16x16.png')
+        call add( mylist, 'Categories=TextEditor;Development;')
+        call add( mylist, 'MimeType=text/plain;')
+        call add( mylist, 'StartupWMClass=GVim')
+        call add( mylist, 'StartupNotify=true')
         "call add( mylist, 'Exec=gvim --servername "`kdialog --combobox 'izaberi '\`gvim --serverlist\` `" --remote %U')
-        call add( mylist, 'Exec=gvim --servername ' . v:servername . ' --remote %U')
+        call add( mylist, 'Exec=gvim --servername ' . v:servername . ' --remote-tab-silent %F')
 
-        "    let mylist = [ v:servername ]
-        "    call add( mylist , 'two')
-        "    call add( mylist, "four" )
-
-        let filename = expand( '~/.kde/share/apps/konqueror/servicemenus/openInGvim_' . v:servername . '.desktop' )
+        " let filename = expand( '~/.local/share/applications/Gvim_created.desktop' )
+        let filename = expand( '~/.local/share/applications/gvim.desktop' )
         call writefile( mylist, filename )
-        "  !echo filecontent > createKdeDesktopFile.txt
+        execute "silent !update-desktop-database ~/.local/share/applications/"
     endif
 endfunction
 ":au GUIEnter * silent call CreateKdeDesktopFile() 

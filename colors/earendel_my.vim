@@ -12,8 +12,8 @@ endif
 let g:colors_name = "earendel_my"
 
 if v:version >= 700
-	" highlight CursorColumn guibg=#1b1b1b gui=NONE
-	" highlight CursorLine guibg=#1b1b1b gui=NONE
+	" highlight CursorColumn guibg=#101010 gui=NONE
+	" highlight CursorLine guibg=#101010 gui=NONE
 	highlight CursorColumn guibg=#111111 gui=NONE
 	highlight CursorLine guibg=#111111 gui=NONE
 	highlight Pmenu guifg=#dadada guibg=#3d5078 gui=NONE
@@ -47,7 +47,7 @@ highlight MatchParen guifg=orange guibg=bg gui=bold
 highlight ModeMsg guifg=fg guibg=bg gui=bold
 highlight MoreMsg guifg=#b5b5b5 guibg=bg gui=bold
 highlight NonText guifg=#005f87 guibg=bg gui=NONE
-highlight Normal guifg=#cacaca guibg=#212121 gui=NONE
+highlight Normal guifg=#cacaba guibg=#312121 gui=NONE
 highlight Question guifg=#b5b5b5 guibg=bg gui=bold
 highlight Search guifg=#dadada guibg=#964F18 gui=NONE
 highlight SignColumn guifg=#9a9a9a guibg=#090909 gui=NONE
@@ -99,11 +99,13 @@ highlight Type guifg=#95a4ea guibg=bg gui=bold
 highlight link Typedef Type
 highlight Underlined guifg=#8c91e8 guibg=bg gui=underline
 highlight ColorColumn guibg=#282828  gui=NONE
+" highlight ColorColumn guifg=fg guibg=bg guisp=red  gui=NONE
+highlight StatusLine term=bold,reverse cterm=bold,reverse gui=None guifg=#008ec4 guibg=#090909
 highlight StatuLineStrong guifg=#005f87 guibg=#101010 gui=bold
 highlight StatuLineStrong1 guifg=#101010 guibg=#c30771 gui=bold
 " highlight StatuLineStrong2 guifg=#336611 guibg=bg gui=italic
-highlight StatuLineStrong2 guifg=#005f87 guibg=bg gui=italic
-
+" highlight StatuLineStrong2 guifg=#005f87 guibg=bg gui=italic
+highlight StatuLineStrong2 guifg=#008ec4 guibg=bg gui=italic
 
 "ColorScheme metadata{{{
 if v:version >= 700

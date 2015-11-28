@@ -1,0 +1,24 @@
+snippet debug
+	{% load my_debug %}
+	<textarea onclick="this.focus();this.select()" style="width: 100%;"> {% filter force_escape %} {% debug %} {% endfilter %}</textarea>
+endsnippet
+
+snippet ipdb
+	{% load my_debug %}
+	{% ipdb %}
+endsnippet
+
+snippet pudb
+	{% load my_debug %}
+	{% pudb %}
+endsnippet
+
+snippet context_keys
+	{% load my_debug %}
+	<textarea onclick="this.focus();this.select()" style="width: 100%;"> {% filter force_escape %} {% context_keys %} {% endfilter %}</textarea>
+endsnippet
+
+snippet context_values
+	{% load my_debug %}
+	<textarea onclick="this.focus();this.select()" style="width: 100%;"> {% filter force_escape %} {% context_values %} {% endfilter %}</textarea>
+endsnippet

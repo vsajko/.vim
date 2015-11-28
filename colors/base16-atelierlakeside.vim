@@ -1,1 +1,0 @@
-/home/vsajko/src/base16-builder/output/vim/base16-atelierlakeside.vim

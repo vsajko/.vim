@@ -1,40 +1,3 @@
-"enhancedCommenify
-let g:EnhCommentifyUseSyntax ='yes'
-let g:EnhCommentifyBindInInsert='no'
-let g:EnhCommentifyRespectIndent = 'Yes'
-    function EnhCommentifyCallback(ft)
-	if a:ft == 'yaml'
-		let b:ECcommentOpen = '# '
-"        let b:ECcommentClose = 'baz'
-	endif
-    endfunction
-    let g:EnhCommentifyCallbackExists = 'Yes'
-let g:EnhCommentifyCallbackExists=1
-let g:EnhCommentifyPretty = 'Yes'
-
-"tcomment
-let g:tcommentGuessFileType_xhtml='1'
-let g:tcommentGuessFileType_perl='1'
-let g:tcommentGuessFileType_tt2html='1'
-let g:tcommentGuessFileType_tt2='1'
-let g:tcommentGuessFileType_velocity='1'
-
-"taglist
-" nnoremap <silent> <F8> :Tlist<CR>
-" nnoremap <silent> <F9> :TlistSync<CR>
-" let Tlist_Display_Prototype=0
-" let Tlist_Ctags_Cmd = 'ctags'
-" let Tlist_Show_One_File=1
-" let Tlist_Show_Menu=0
-" let Tlist_Display_Tag_Scope=1
-" let Tlist_Auto_Highlight_Tag=1
-" let Tlist_Highlight_Tag_On_BufEnter=1
-" "  let Tlist_Display_Tag_Scope = 0
-" "let tlist_perl_settings = 'perl;p:package;u:use;s:sub;f:formats;c:constants;l:label'
-" let tlist_perl_settings='perl;u:use;p:package;r:role;e:extends;c:constant;a:attribute;s:subroutine;l:label'
-" "let tlist_perl_settings = 'perl;p:class;s:function'
-" let Tlist_Enable_Fold_Column=0
-
 "netrw
 "let g:loaded_netrw=1
 "let g:loaded_netrwPlugin=0
@@ -49,54 +12,36 @@ let g:netrw_liststyle=3
 " map <F5> :Lexplore<Cr>
 " map <S-F5> :Lexplore .<Cr>
 
-
-"fuf
-let g:fuf_modesDisable = [ ]
-let g:fuf_timeFormat = '(%d.%m %H:%M)'
-let g:fuf_maxMenuWidth = 220
-let g:fuf_bookmark_keyDelete='<C-D>'
-let g:fuf_mrufile_maxItem = 60
-let g:fuf_autoPreview = 1
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
-let g:fuf_keyPrevPattern = '<C-Up>'
-let g:fuf_keyNextPattern = '<C-Down>'
-" :imap <silent> <F12> <Esc>:FufBuffer<CR>
-" :map <silent> <F12> :FufBuffer<CR>
-
-
-" :map <silent> <S-F10> :FufFile!<CR>
-" :map <silent> <F10> :FufCoverageFile!<CR>
-" :map <silent> <F1> :FufMruFile<CR>
-" :imap <silent> <F1> <Esc>:FufMruFile<CR>
-
-":map <S-F7> <Esc>:TToC ^\s*package.*\\|^\s*sub.*<CR>
-" :map <S-F7> <Esc>:FufLine! sub ;<Cr>
-" :map <F7> <Esc>:FufLine!<Cr>
-
-"minibuffexplorer
-"let g:miniBufExplForceSyntaxEnable = 1
-:hi link MBENormal Normal
-:hi link MBEChanged WarningMsg
-:hi link MBEVisibleNormal Visual
-:hi link MBEVisibleChanged DiffChange
-
 "vimfiler
 let g:vimfiler_as_default_explorer=1
-map <F5> :VimFiler<Cr>
+map <F5> :VimFilerExplorer -status<Cr>
 " map <S-F5> :VimFilerExplorer -find<cr>
-map <S-F5> :VimFilerBufferDir -split -simple -find<cr>
+map <S-F5> :VimFilerBufferDir -explorer -find -status -winwidth=50<cr>
+map <F6> :VimFilerCurrentDir -explorer -status -winwidth=50<cr>
 let g:vimfiler_ignore_pattern = '^\%(\..*\|.*\.pyc\|.*\~\)$'
 let g:vimfiler_quick_look_command = 'scite'
+let g:vimfiler_define_wrapper_commands=1
 " Like Textmate icons.
-let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_file_icon = '|'
-let g:vimfiler_marked_file_icon = '*'
+" let g:vimfiler_tree_leaf_icon = ' '
+" let g:vimfiler_tree_opened_icon = '▾'
+" let g:vimfiler_tree_closed_icon = '▸'
+" let g:vimfiler_file_icon = '|'
+" let g:vimfiler_marked_file_icon = '*'
 
-let g:vimfiler_safe_mode_by_default=0
+" let g:vimfiler_tree_leaf_icon = ' '
+" let g:vimfiler_tree_opened_icon = '▾'
+" let g:vimfiler_tree_closed_icon = '▸'
+" let g:vimfiler_file_icon = '|'
+" let g:vimfiler_marked_file_icon = '*'
+
+" let g:vimfiler_safe_mode_by_default=0
+call vimfiler#custom#profile('default', 'context', {
+      \ 'safe' : 0,
+      \ })
+let g:vimfiler_tree_leaf_icon='│'
+let g:vimfiler_tree_opened_icon=' '
+let g:vimfiler_tree_indentation=2
+" let g:vimfiler_directory_display_top=0
 
 "easytree
 " map <F5> :EasyTree<Cr>
@@ -117,26 +62,26 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 
 
 function! NerdLs(print)
-	"let winnr= bufwinnr('%')
-	let winnr= winnr()
+    "let winnr= bufwinnr('%')
+    let winnr= winnr()
 "  let path= NERDTreeGetCurrentPath().strAbs()
-	let path= g:NERDTreeDirNode.GetSelected().path.str({'format': 'Glob'})
-	"let path= '/home'
-	"call system( "!ls -laph " . path)
-	exe "normal ". winnr . "W"
-	if ( a:print )
-		let oldr= @r
-		redir @r>
-		exe ":!ls -laphrt " . path
-		redir END
-		exe ":Scratch"
-		put r
-		let @r= oldr
-	else
-		exe ":!ls -laphrt " . path
-	endif
+    let path= g:NERDTreeDirNode.GetSelected().path.str({'format': 'Glob'})
+    "let path= '/home'
+    "call system( "!ls -laph " . path)
+    exe "normal ". winnr . "W"
+    if ( a:print )
+        let oldr= @r
+        redir @r>
+        exe ":!ls -laphrt " . path
+        redir END
+        exe ":Scratch"
+        put r
+        let @r= oldr
+    else
+        exe ":!ls -laphrt " . path
+    endif
 
-	return path
+    return path
 endfunction
 
 nmap <Leader>ls :call NerdLs(0)<Cr>
@@ -145,30 +90,7 @@ nmap <Leader>lp :call NerdLs(1)<Cr>
 
 
 
-"perl syntax od Lukas Mai <l.mai@web.de>
-"ne koristim ga
-let perl_include_pod=1
 
-"vimwiki
-let g:vimwiki_list = [{'path': '~/.vim_private/vimwiki/', 'path_html':'~/.vim_private/vimwiki_html'}]
-let g:vimwiki_folding=1
-nmap <silent><buffer> <C-S-Up> <Plug>VimwikiDiaryPrevDay
-nmap <silent><buffer> <C-S-Down> <Plug>VimwikiDiaryNextDay
-
-"notes
-let g:notesRoot = $HOME . '/.dotfiles_private/dots/.vim_private/vimnotes'
-let g:notesFileExtension='.md'
-let g:notesFileType = 'markdown'
-let g:notesWordSeparator = '_'
-let g:notesSyncNameAndTitle = 1
-command! NoteTags silent execute "!cd " . g:notesRoot . "&& ctags -R && cd -"
-let &tags .=',' . g:notesRoot . '/tags'
-
-
-"dumbbuf
-"brišem ga
-"let dumbbuf_hotkey = '<S-F4>' 
-"let dumbbuf_cursor_pos = 'keep'
 
 "marvim
 let marvim_find_key = ',mr' " change find key from <F2> to 'space'
@@ -196,6 +118,26 @@ let g:tagbar_type_perl = {
             \ ]
             \ }
 
+" let g:tagbar_type_javascript = {
+"             \ 'kinds'     : [
+"             \ 'o:objects:1',
+"             \ 'f:functions:1',
+"             \ 'a:array:1',
+"             \ 's:string:1'
+"             \ ]
+"             \ }
+ let g:tagbar_type_javascript = {
+    \ 'kinds' : [
+        \ 'v:global variables:0:0',
+        \ 'o:objects:1',
+        \ 'c:classes',
+        \ 'p:properties:0:0',
+        \ 'a:array:1:0',
+        \ 's:string:1:0',
+        \ 'm:methods',
+        \ 'f:functions'
+    \ ],
+\ }
 let g:tagbar_type_php = {
             \ 'kinds'     : [
             \ 'c:classes',
@@ -343,9 +285,6 @@ nnoremap <silent> <S-F8> :TagbarToggle<cr>
 " map  <S-F8>   <Plug>ShowFunc
 " map! <S-F8>   <Plug>ShowFunc 
 
-"snipMate
-command SnipReload call ResetSnippets() 
-
 "surround
 nmap š ysiw
 nmap đ ds
@@ -359,8 +298,6 @@ nmap ''' ysiw'
 " nmap <unique> <Leader>kal <Plug>CalendarV
 " nmap <unique> <Leader>kaL <Plug>CalendarH
 
-"occur
-let g:occur_no_quickfix_map=1
 
 "manpageview
 let g:manpageview_multimanpage=0
@@ -460,8 +397,9 @@ noremap <silent> <F4> :BufExplorerHorizontalSplit<CR>
 " let g:syntastic_python_checkers = ['pylint']
 " let g:syntastic_python_checkers = ['ep8', 'pyflakes']
 " let g:syntastic_python_checkers = ['pyflakes', 'pep8']
-let g:syntastic_python_checkers = ['frosted', 'pep8']
-
+let g:syntastic_python_checkers = ['frosted', 'pep8', 'pyflakes']
+" let g:syntastic_python_ssh_exe = "ssh"
+" let g:syntastic_python_ssh_exe = "ssh -F ../ssh-config tcbase 'cd /opt/tcbase/tcbase && pylint '"
 " let g:syntastic_python_checkers = ['frosted']
 " let g:syntastic_python_checkers = ['pyflakes']
 " let g:syntastic_python_checkers = ['pep8']
@@ -486,9 +424,13 @@ command! Pylint execute "SyntasticCheck pylint"
 
 " original is [Syntax: line:%F (%t)]
 let syntastic_loc_list_height=5
-let g:syntastic_enable_highlighting = 0
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_aggregate_errors = 1
 " let g:syntastic_python_pye_exec=''
-
+let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
+let g:syntastic_html_checkers=['w3', 'jshint']
+let g:syntastic_html_validator_parser='html5'
 "virtualenv
 " let g:virtualenv_auto_activate='sage'
 
@@ -539,15 +481,29 @@ nmap <C-LeftMouse> :YcmCompleter GoTo<CR>
 " let g:ycm_min_num_of_chars_for_completion = 99
 " let g:ycm_auto_trigger = 0
 " let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" this does not work
+" let g:ycm_path_to_python_interpreter = 'ssh vagrant@127.0.0.1 -p 2222 -i ~/.vagrant.d/insecure_private_key python'
 " identifier completion trigger
 " let g:ycm_auto_trigger = 0
 " semantic completion trigger , default is 2
 " let g:ycm_min_num_of_chars_for_completion=99
 
-
 "ropevim BLOODY THING DON'T WORK
 " let $PYTHONPATH .= ":/home/vsajko/.virtualenvs/sage/lib/python2.7/site-packages:/home/vsajko/.virtualenvs/sage/lib/python2.7/site-packages/rope:/home/vsajko/.virtualenvs/sage/lib/python2.7/site-packages/ropemode/"
 " source /home/vsajko/.virtualenvs/sage/share/vim/plugin/ropevim.vim
+
+
+" let ropevim_codeassist_maxfixes: The maximum number of syntax errors to fix for code assists. The default value is 1.
+let g:ropevim_local_prefix='<C-p>'
+let g:ropevim_global_prefix='<C-p>'
+" let g:ropevim_enable_shortcuts: Shows whether to bind ropevim shortcuts keys. Defaults to 1.
+" let g:ropevim_guess_project: If non-zero, ropevim tries to guess and open the project that contains the file on which a ropevim command is performed when no project is already open.
+let g:ropevim_enable_autoimport=1
+let g:ropevim_autoimport_modules = ["os", "shutil"]
+" let g:ropevim_autoimport_modules: The name of modules whose global names should be cached. RopeGenerateAutoimportCache reads this list and fills its cache.
+" let g:ropevim_autoimport_underlineds: If set, autoimport will cache names starting with underlines, too.
+" let g:ropevim_goto_def_newwin: If set, ropevim will open a new buffer for "go to definition" result if the definition found is located in another file. By default the file is open in the same buffer.
+" let g:ropevim_open_files_in_tabs: If non-zero, ropevim will open files in tabs. This is disabled by default.
 
 "jedi-vim
 " let g:jedi#show_call_signatures=0
@@ -562,6 +518,7 @@ let g:localvimrc_persistent=1
 
 " rooter
 let g:rooter_patterns = ['.lvimrc', 'vimrc.vim']
+let g:rooter_manual_only = 1
 
 " fontzoom
 " let g:fontzoom_no_default_key_mappings=1
@@ -590,6 +547,9 @@ let g:rooter_patterns = ['.lvimrc', 'vimrc.vim']
 "
 nmap <leader>h <Plug>(quickhl-manual-this)
 xmap <leader>h <Plug>(quickhl-manual-this)
+" nmap H <Plug>(operator-quickhl-manual-this-motion)
+" xmap H <Plug>(operator-quickhl-manual-this-motion)
+
 " nmap <F9>     <Plug>(quickhl-manual-toggle)
 " xmap <F9>     <Plug>(quickhl-manual-toggle)
 " nmap <Space>M <Plug>(quickhl-manual-reset)
@@ -617,6 +577,8 @@ let g:expand_region_text_objects = get(g:, 'expand_region_text_objects', {
             \ 'ai'  :1,
             \ 'ie'  :0,
             \})
+map đ <Plug>(expand_region_expand)
+map ž <Plug>(expand_region_shrink)
 
 " textobj-user
 call textobj#user#plugin('djangovar', {
@@ -640,7 +602,7 @@ vnoremap <silent> <Enter> :EasyAlign<Enter>
 
 
 " indentLine
-let g:indentLine_enabled=0
+let g:indentLine_enabled=1
 let g:indentLine_char = '┊'
 
 " indentguides
@@ -660,21 +622,26 @@ let g:choosewin_overlay_enable = 1
 
 "viewdoc
 " let g:no_viewdoc_maps=1
-" nnoremap <unique> K		:call ViewDoc('doc', '<cword>')<CR>
+" nnoremap <unique> K       :call ViewDoc('doc', '<cword>')<CR>
 
 
 " unite
 noremap <F7> :<C-u>Unite -start-insert -vertical -no-quit -keep-focus line:forward<CR>
 " noremap <F8> :<C-u>Unite -start-insert -vertical outline<CR>
 noremap <F8> :<C-u>Unite -start-insert outline tag<CR>
-" noremap <F11> :<C-u>Unite -start-insert tag<CR>
-noremap <F12> :<C-u>Unite -start-insert buffer:- file_rec<CR>
-noremap <F10> :<C-u>Unite -start-insert tab buffer<CR>
-noremap <S-F10> :<C-u>Unite -start-insert file:%:h<CR>
+noremap <S-F7> :<C-u>Unite -start-insert -vertical outline<CR>
+noremap <F12> :<C-u>Unite -start-insert buffer:- file_rec:<CR>
+noremap <S-F12> :<C-u>Unite -vertical -no-truncate -start-insert buffer:- file_rec<CR>
+noremap <F10> :<C-u>Unite -start-insert tab<CR>
+noremap <S-F10> :<C-u>Unite -start-insert window:all<CR>
+" noremap <S-F10> :<C-u>Unite -start-insert file:%:h<CR>
+noremap <F11> :<C-u>Unite -start-insert file:%:h<CR>
 noremap <F1> :<C-u>Unite -start-insert file_mru<CR>
 command! Uc Unite change -auto-preview
 command! Uj Unite jump -auto-preview
 command! Ur UniteResume
+command! UU UniteResume
+noremap <F2> :<C-u>UniteResume<CR>
 let g:unite_converter_file_directory_width=120
 let g:unite_source_tag_max_fname_length=120
 autocmd FileType unite call s:unite_my_settings()
@@ -685,6 +652,14 @@ function! s:unite_my_settings()
     nmap <silent><buffer><expr> <C-s>     unite#do_action('split')
     nmap <silent><buffer><expr> <C-v>     unite#do_action('vsplit')
 endfunction
+
+let g:unite_source_menu_menus = {}
+let g:unite_source_menu_menus.test = {
+            \     'command_candidates': {
+            \     'hello': 'echo "hello"', 
+            \     'python': 'VimShellInteractive python'}
+            \ }
+
 
 let g:unite_source_outline_filetype_options = {
       \ '*': {
@@ -712,7 +687,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-" g:neocomplete#sources			*g:neocomplete#sources*
+" g:neocomplete#sources         *g:neocomplete#sources*
 " It is a dictionary to decide use source names.  The key is
 " filetype and the value is source names list.  If the key is
 " "_", the value will be used for default filetypes.  For
@@ -759,10 +734,15 @@ let g:patternjump_highlight=1
 " autoformat
 " let g:formatprg_args_python = "--max-line-length=79 -a"
 " let g:formatprg_args_expr_python = '"/dev/stdin --max-line-length=80 -a"'
-let g:formatprg_args_expr_python = '"/dev/stdin --max-line-length=80"'
+" let g:formatprg_args_expr_python = '"/dev/stdin --max-line-length=80"'
+" let g:formatprg_args_expr_javascript = '"-j --good-stuff -f - -".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")'
+" let g:formatprg_args_expr_javascript = '"-j --good-stuff -s 4 -w 110 -f - "'
+" let g:formatdef_jsbeautify_javascript = '"js-beautify -f - -".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")'
+" let g:formatdef_jsbeautify_javascript = '"js-beautify -j --good-stuff -s 4 -w 110 -f - "'
 
 " " colorv
 let g:colorv_no_global_map=1
+let g:colorv_uppercase=0
 
 " python-syntax
 let g:python_version_2 = 1
@@ -784,23 +764,152 @@ xmap ik <Plug>(textobj-python-class-i)
 omap ik <Plug>(textobj-python-class-i)
 
 " bookmarks
-nmap <Leader>bt <Plug>ToggleBookmark
-nmap <Leader>ba <Plug>Annotate
-nmap <Leader>bs <Plug>ShowAllBookmarks
-nmap <Leader>bj <Plug>NextBookmark
-nmap <Leader>bk <Plug>PrevBookmark
-nmap <Leader>bd <Plug>ClearBookmarks
-nmap <Leader>bw <Plug>ClearAllBookmarks
-
+" nmap <Leader>bt <Plug>ToggleBookmark
+" nmap <Leader>ba <Plug>Annotate
+" nmap <Leader>bs <Plug>ShowAllBookmarks
+" nmap <Leader>bj <Plug>NextBookmark
+" nmap <Leader>bk <Plug>PrevBookmark
+" nmap <Leader>bd <Plug>ClearBookmarks
+" nmap <Leader>bw <Plug>ClearAllBookmarks
+" let g:bookmark_highlight_lines = 1
+" highlight BookmarkLine guibg=#6b0bfb gui=NONE
+" highlight BookmarkAnnotationLine guibg=#6b0bfb gui=NONE
+" highlight BookmarkLineDefault guibg=#6b0b0b gui=NONE
+" highlight BookmarkAnnotationLineDefault guibg=#6b0b0b gui=NONE
+" ≡  
+" let g:bookmark_sign = '♂'
+" let g:bookmark_annotation_sign = '♀'
+" let g:bookmark_save_per_working_dir = 0
+" let g:bookmark_auto_save = 1
 let g:bookmark_highlight_lines = 1
-highlight BookmarkLine guibg=#6b0bfb gui=NONE
-highlight BookmarkAnnotationLine guibg=#6b0bfb gui=NONE
-highlight BookmarkLineDefault guibg=#6b0b0b gui=NONE
-highlight BookmarkAnnotationLineDefault guibg=#6b0b0b gui=NONE
-
 
 " markology
-let g:markology_enable=0
+let g:markology_enable=1
+let g:markology_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let g:markology_textlower="\t\t"
 
 
 
+" increment-activator
+let g:increment_activator_filetype_candidates = {
+  \   '_' : [
+  \     ['info', 'warning', 'notice', 'error'],
+  \     ['and', 'or', 'not'],
+  \     ['left', 'right'],
+  \     ['yes', 'no'],
+  \   ],
+  \   'cucumber': [
+  \     ['Given', 'And', 'When', 'Then'],
+  \   ],
+  \   'erlang': [
+  \     ['module', 'export'],
+  \     [
+  \       'is_alive', 'is_atom', 'is_binary', 'is_bitstring',
+  \       'is_boolean', 'is_float', 'is_function',
+  \       'is_integer', 'is_list', 'is_number',
+  \       'is_pid', 'is_port', 'is_process_alive',
+  \       'is_record', 'is_reference', 'is_tuple',
+  \     ],
+  \   ],
+  \   'git-rebase-todo': [
+  \     ['pick', 'reword', 'edit', 'squash', 'fixup', 'exec'],
+  \   ],
+  \   'go': [
+  \     ['true', 'false', 'iota', 'nil'],
+  \     ['byte', 'complex64', 'complex128'],
+  \     ['int', 'int8', 'int16', 'int32', 'int64'],
+  \     ['uint', 'uint8', 'uint16', 'uint32', 'uint64'],
+  \     ['float32', 'float64'],
+  \     ['interface', 'struct'],
+  \   ],
+  \   'python': [
+  \     ['debug', 'info', 'warning', 'error', 'critical'],
+  \     ['console', 'file']
+  \   ]
+  \ }
+
+
+" signify
+" nmap <leader>gj <plug>(signify-next-hunk)
+" nmap <leader>gk <plug>(signify-prev-hunk)
+
+" gitgutter
+let g:gitgutter_map_keys = 0
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+nmap <Leader>gj <Plug>GitGutterNextHunk
+nmap <Leader>gk <Plug>GitGutterPrevHunk
+nmap <Leader>gp <Plug>GitGutterPreviewHunk
+nmap <Leader>gr <Plug>GitGutterRevertHunk
+nmap <Leader>gs <Plug>GitGutterStageHunk
+
+
+" colorscheme switcher
+let g:colorscheme_switcher_define_mappings=0
+let g:colorscheme_switcher_exclude = ['default', 'test']
+command ColoN :NextColorScheme
+command ColoP :PrevColorScheme
+let g:colorscheme_switcher_exclude_builtins=1
+let g:colorscheme_switcher_keep_background=1
+
+" ZoomWin
+nmap <unique> <c-w>m  <Plug>ZoomWin
+" let foo =['apprentice',
+"  'badwolf',
+"  'disciple',
+"  'earendel',
+"  'earendel_my',
+"  'freya',
+"  'holokai',
+"  'iceberg',
+"  'last256',
+"  'lucius',
+"  'luna',
+"  'luna-term',
+"  'molokai',
+"  'moria',
+"  'pencil',
+"  'sienna',
+"  'sol',
+"  'sol-term',
+"  'solarized',
+"  'Tomorrow ',
+"  'Tomorrow-Night',
+"  'Tomorrow-Night-Blue',
+"  'Tomorrow-Night-Bright',
+"  'Tomorrow-Night-Eighties']
+
+" multiple cursors
+let g:multi_cursor_start_key='g<C-n>'
+let g:multi_cursor_start_word_key='<C-n>'
+
+" colorv
+let g:colorv_no_global_map = 1
+let g:colorv_debug = 0
+
+" vimpy
+let g:vimpy_prompt_resolve = 1
+let g:vimpy_remove_unused = 1
+" matchparen
+function MyMatchParenOff()
+    " windo silent! call matchdelete(3)
+    unlet! g:loaded_matchparen
+    autocmd! matchparen
+    echo 'MatchParrenOff'
+endfunction
+
+function MyMatchParenOn()
+    " let winnr = winnr()
+    runtime plugin/matchparen.vim
+    " windo doautocmd CursorMoved
+    echo 'MatchParrenOn'
+endfunction
+
+command! MatchParenOff call MyMatchParenOff()
+command! MatchParenOn call MyMatchParenOn()
+
+" fugitive
+" autocmd FileType fugitiveblame call MyMatchParenOff()
+" autocmd FileType fugitiveblame setlocal synmaxcol=12
+" autocmd FileType fugitiveblame call MyMatchParenOn()

@@ -53,4 +53,6 @@ au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md  setf markdown
 au BufNewFile,BufRead rfc*.txt  setf rfc
 au! BufNewFile,BufRead *.txt,*.text
 au BufNewFile,BufRead *.txt,*.text		setf text
+
+autocmd BufNewFile,BufRead .Xresources setfiletype xresources
 augroup END

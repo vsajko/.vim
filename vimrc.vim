@@ -1,6 +1,6 @@
 set nocompatible
 set runtimepath+=~/.vim/neobundle/neobundle.vim/
-set runtimepath+=~/.dotfiles_private/dots/.vim_private/
+set runtimepath+=~/Private/.dotfiles_private/dots/.vim_private/
 
 " Required:
 call neobundle#begin(expand('~/.vim/neobundle/'))
@@ -11,137 +11,9 @@ let g:neobundle#log_filename='/home/vsajko/.vim/neobundle/neobundle.log'
 NeoBundleFetch 'Shougo/neobundle.vim'
 let g:make = 'make'
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+source ~/.vim/neobundle_bundles.vim
 
-" NeoBundle 'https://github.com/vim-scripts/F6_Comment.git'
-" NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
-
-NeoBundle 'http://conque.googlecode.com/svn/trunk', {'name': 'conque'}
-NeoBundle 'https://bitbucket.org/abudden/tagsignature'
-NeoBundle 'https://bitbucket.org/ns9tks/vim-l9', {'name': 'l9'}
-NeoBundle 'https://bitbucket.org/sjl/gundo.vim', {'name': 'gundo'}
-NeoBundle 'https://github.com/AndrewRadev/inline_edit.vim.git'
-NeoBundle 'https://github.com/AndrewRadev/linediff.vim.git'
-NeoBundle 'https://github.com/AndrewRadev/sideways.vim.git'
-NeoBundle 'https://github.com/AndrewRadev/splitjoin.vim.git'
-NeoBundle 'https://github.com/AndrewRadev/writable_search.vim.git'
-NeoBundle 'https://github.com/Chiel92/vim-autoformat.git', {'name': 'autoformat'}
-NeoBundle 'https://github.com/JarrodCTaylor/vim-python-test-runner.git', {'name': 'python-test-runner'}
-NeoBundle 'https://github.com/LStinson/TagmaTips.git'
-NeoBundle 'https://github.com/Pychimp/vim-luna.git', {'name': 'colors-luna'}
-NeoBundle 'https://github.com/Pychimp/vim-sol.git', {'name': 'colors-sol'}
-NeoBundle 'https://github.com/Shougo/context_filetype.vim.git'
-NeoBundle 'https://github.com/Shougo/neomru.vim.git'
-NeoBundle 'https://github.com/Shougo/unite-help.git'
-NeoBundle 'https://github.com/Shougo/unite-outline.git'
-NeoBundle 'https://github.com/Shougo/unite-session.git'
-NeoBundle 'https://github.com/Shougo/unite-ssh.git'
-NeoBundle 'https://github.com/Shougo/unite.vim.git', {'name': 'unite'}
-NeoBundle 'https://github.com/Shougo/vimfiler.vim.git'
-NeoBundle 'https://github.com/Shougo/vimproc.vim', {'name': 'vimproc', 'build': {'unix': g:make}}
-NeoBundle 'https://github.com/Shougo/vimshell.vim.git'
-NeoBundle 'https://github.com/SirVer/ultisnips.git'
-" NeoBundle 'https://github.com/Valloric/YouCompleteMe', {'build': {'unix': './install.sh'}}
-NeoBundle 'https://github.com/Valloric/YouCompleteMe'
-NeoBundle 'https://github.com/airblade/vim-rooter.git', {'name': 'rooter'}
-NeoBundle 'https://github.com/aklt/plantuml-syntax.git'
-NeoBundle 'https://github.com/alfredodeza/pytest.vim.git'
-NeoBundle 'https://github.com/altercation/vim-colors-solarized.git', {'name': 'colors-solarized'}
-NeoBundle 'https://github.com/ameade/qtpy-vim.git'
-NeoBundle 'https://github.com/bps/vim-textobj-python.git', {'name': 'textobj-python'}
-NeoBundle 'https://github.com/changyuheng/color-scheme-holokai-of-vim.git', {'name': 'colors-holokai'}
-NeoBundle 'https://github.com/chrisbra/NrrwRgn.git'
-NeoBundle 'https://github.com/chrisbra/csv.vim.git'
-NeoBundle 'https://github.com/cocopon/iceberg.vim.git', {'name': 'colors-iceberg'}
-NeoBundle 'https://github.com/derekwyatt/vim-scala.git', {'name': 'scala'}
-NeoBundle 'https://github.com/elzr/vim-json.git', {'name': 'json'}
-NeoBundle 'https://github.com/embear/vim-localvimrc.git', {'name': 'localvimrc'}
-NeoBundle 'https://github.com/exu/pgsql.vim.git'
-NeoBundle 'https://github.com/glts/vim-textobj-comment.git', {'name': 'textobj-comment'}
-NeoBundle 'https://github.com/glts/vim-textobj-indblock.git', {'name': 'textobj-indblock'}
-NeoBundle 'https://github.com/greyblake/vim-preview.git', {'name': 'preview'}
-NeoBundle 'https://github.com/heavenshell/vim-pydocstring.git', {'name': 'pydocstring'}
-NeoBundle 'https://github.com/honza/vim-snippets.git', {'name': 'ultisnip-snippets'}
-NeoBundle 'https://github.com/hynek/vim-python-pep8-indent.git', {'name': 'python-pep8-indent'}
-NeoBundle 'https://github.com/idanarye/vim-merginal.git', {'name': 'merginal'}
-NeoBundle 'https://github.com/int3/vim-extradite.git', {'name': 'extradite'}
-NeoBundle 'https://github.com/jakobwesthoff/argumentrewrap.git'
-NeoBundle 'https://github.com/jcorbin/vim-searchmatch.git', {'name': 'searchmatch'}
-NeoBundle 'https://github.com/jeetsukumaran/vim-markology.git', {'name': 'markology'}
-NeoBundle 'https://github.com/jlanzarotta/bufexplorer.git'
-NeoBundle 'https://github.com/jmcantrell/vim-virtualenv.git', {'name': 'virtualenv'}
-NeoBundle 'https://github.com/jonathanfilip/vim-lucius.git', {'name': 'colors-lucius'}
-NeoBundle 'https://github.com/junegunn/vim-easy-align.git', {'name': 'easy-align'}
-NeoBundle 'https://github.com/kana/vim-operator-user.git', {'name': 'operator-user'}
-NeoBundle 'https://github.com/kana/vim-textobj-syntax.git', {'name': 'textobj-syntax'}
-NeoBundle 'https://github.com/kana/vim-textobj-user.git', {'name': 'textobj-user'}
-NeoBundle 'https://github.com/machakann/vim-patternjump.git', {'name': 'patternjump'}
-NeoBundle 'https://github.com/majutsushi/tagbar'
-NeoBundle 'https://github.com/mattn/emmet-vim.git'
-NeoBundle 'https://github.com/mhinz/vim-signify.git', {'name': 'signify'}
-NeoBundle 'https://github.com/michaeljsmith/vim-indent-object.git', {'name': 'indent-object'}
-NeoBundle 'https://github.com/mileszs/ack.vim.git'
-NeoBundle 'https://github.com/mjbrownie/swapit.git'
-NeoBundle 'https://github.com/osyo-manga/unite-filetype.git'
-NeoBundle 'https://github.com/osyo-manga/vim-textobj-multiblock.git', {'name': 'textobj-multiblock'}
-NeoBundle 'https://github.com/reedes/vim-colors-pencil.git', {'name': 'colors-pencil'}
-NeoBundle 'https://github.com/rhysd/vim-operator-surround.git', {'name': 'operator-surround'}
-NeoBundle 'https://github.com/rhysd/vim-textobj-anyblock.git', {'name': 'textobj-anyblock'}
-NeoBundle 'https://github.com/rhysd/vim-textobj-continuous-line.git', {'name': 'textobj-continuous-line'}
-NeoBundle 'https://github.com/rking/ag.vim.git'
-NeoBundle 'https://github.com/scrooloose/syntastic.git'
-NeoBundle 'https://github.com/sjl/badwolf.git', {'name': 'colors-badwolf'}
-NeoBundle 'https://github.com/sk1418/HowMuch.git'
-NeoBundle 'https://github.com/sk1418/Join.git'
-NeoBundle 'https://github.com/sk1418/QFGrep.git'
-NeoBundle 'https://github.com/sk1418/last256.git', {'name': 'colors-last256'}
-NeoBundle 'https://github.com/t9md/vim-choosewin.git', {'name': 'choosewin'}
-NeoBundle 'https://github.com/t9md/vim-quickhl.git', {'name': 'quickhl'}
-NeoBundle 'https://github.com/tacroe/unite-mark.git'
-NeoBundle 'https://github.com/terryma/vim-expand-region.git', {'name': 'expand-region'}
-NeoBundle 'https://github.com/terryma/vim-multiple-cursors.git', {'name': 'multiple-cursors'}
-NeoBundle 'https://github.com/thinca/vim-qfreplace.git', {'name': 'qfreplace'}
-NeoBundle 'https://github.com/thinca/vim-ref.git', {'name': 'ref'}
-NeoBundle 'https://github.com/thinca/vim-textobj-between.git', {'name': 'textobj-between'}
-NeoBundle 'https://github.com/timcharper/textile.vim.git'
-NeoBundle 'https://github.com/tpope/vim-commentary.git', {'name': 'commentary'}
-NeoBundle 'https://github.com/tpope/vim-dispatch.git', {'name': 'dispatch'}
-NeoBundle 'https://github.com/tpope/vim-pathogen.git', {'name': 'pathogen'}
-NeoBundle 'https://github.com/tpope/vim-repeat.git', {'name': 'repeat'}
-NeoBundle 'https://github.com/tpope/vim-scriptease.git', {'name': 'scriptease'}
-NeoBundle 'https://github.com/tpope/vim-speeddating.git', {'name': 'speeddating'}
-NeoBundle 'https://github.com/tpope/vim-surround.git', {'name': 'surround'}
-NeoBundle 'https://github.com/tpope/vim-fugitive', {'name': 'fugitive',  'augroup' : 'fugitive'}
-NeoBundle 'https://github.com/tommcdo/vim-fugitive-blame-ext.git', {'name': 'fugitive-blame-ext'}
-NeoBundle 'https://github.com/gregsexton/gitv.git'
-NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-NeoBundle 'https://github.com/ujihisa/unite-font.git'
-NeoBundle 'https://github.com/vim-scripts/ColorSchemeEditor.git'
-NeoBundle 'https://github.com/vim-scripts/Notes.git'
-NeoBundle 'https://github.com/vim-scripts/SelectBuf.git'
-NeoBundle 'https://github.com/vim-scripts/VimSpy.git'
-NeoBundle 'https://github.com/vim-scripts/WhereFrom.git'
-NeoBundle 'https://github.com/vim-scripts/closeb.git'
-NeoBundle 'https://github.com/vim-scripts/genutils'
-NeoBundle 'https://github.com/vim-scripts/listmaps.vim.git'
-NeoBundle 'https://github.com/vim-scripts/marvim.git'
-NeoBundle 'https://github.com/vim-scripts/pylint.vim.git'
-NeoBundle 'https://github.com/vim-scripts/python.vim'
-NeoBundle 'https://github.com/vim-scripts/rfc-syntax.git'
-NeoBundle 'https://github.com/vim-scripts/showhide.vim.git'
-NeoBundle 'https://github.com/vim-voom/VOoM.git', {'name': 'VOoM'}
-NeoBundle 'https://github.com/voithos/vim-python-matchit.git', {'name': 'python-matchit'}
-NeoBundle 'https://github.com/vsajko/Asciitable.vim.git'
-NeoBundle 'https://github.com/vsajko/BlockDiff.git'
-NeoBundle 'https://github.com/vsajko/sessionman.vim.git'
-NeoBundle 'https://github.com/xolox/vim-misc.git', {'name': 'misc_xolox'}
-NeoBundle 'https://github.com/chriskempson/tomorrow-theme.git', {'rtp': 'vim'}
-NeoBundle 'https://github.com/romainl/Disciple.git', {'name': 'colors-disciple'}
-NeoBundle 'https://github.com/romainl/Apprentice.git', {'name': 'colors-apprentice'}
-NeoBundle 'https://github.com/danro/rename.vim.git'
-
+NeoBundleLocal ~/.vim/bundle
 call neobundle#end()
 
 " Required:
@@ -154,18 +26,53 @@ NeoBundleCheck
 " nebundle end 
 
 set nocompatible
-" set runtimepath+=~/.vim_private/
 " runtime bundle/pathogen/autoload/pathogen.vim
 " call pathogen#infect()
 
 set fileformats=unix,dos,mac
+" set nofixendofline
 let mapleader=","
 set background=dark 
-if &t_Co==256 || &t_Co==88
-    colorscheme xoria256transp
+if &term =~ 'xterm'
+    let &t_Co=256
 endif
+if &t_Co==256 || &t_Co==88
+    colorscheme luna-term
+endif
+
+if &term =~ '^xterm' || &term =~ "rxvt"
+  " solid underscore
+  let &t_SI .= "\<Esc>[5 q"
+  " solid block
+  let &t_EI .= "\<Esc>[1 q"
+  " new in 7.4.687
+  let &t_SR .= "\<Esc>[3 q"
+  " 1 or 0 -> blinking block
+  " 3 -> blinking underscore
+  " Recent versions of xterm (282 or above) also support
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+endif
+
+" if &term =~ "xterm\\|rxvt"
+if &term =~ "DISABLE rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;blue\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;gray\x7"
+  " new in 7.4.687
+  let &t_SR .= "\<Esc>]12;purple\x7"
+  " silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  " autocmd VimLeave * silent !echo -ne "\033]037m\007"
+  " use \003]12;gray\007 for gnome-terminal
+endif
+
+" time in miliseconds to wait for next key after <Esc> in term
+" disables mappings like `` and this is bad
+" set timeoutlen=100
 syntax on
-"set synmaxcol=333
+set synmaxcol=150
 filetype plugin on
 filetype indent on
 
@@ -174,12 +81,14 @@ set incsearch
 
 "no bell at all
 set visualbell t_vb=
-set listchars=tab:¦\ ,trail:-,extends:~,precedes:~
-set showbreak=««\ 
+set listchars=tab:¦\ ,trail:»,extends:~,precedes:~,nbsp:±
+set showbreak=««
 set display=lastline
 set nolinebreak
 set nowrap
 set virtualedit=block
+
+set list
 
 " don't break long lines
 set textwidth=0
@@ -204,6 +113,8 @@ set sessionoptions-=resize
 set history=220
 set viminfo='20,<50,s10,h,%,!
 set autoread
+
+set updatetime=2000
 
 " Make shift-insert work like in Xterm
 "map <S-Insert> <MiddleMouse>
@@ -233,10 +144,12 @@ nmap  <C-S-TAB> :bp<Cr>
 nmap <M-PageDown> :tabmove +1<cr>
 nmap <M-PageUp> :tabmove -1<cr>
 command TN tabnew
+command TC tabclose
 
 "allwas show status line
 :set laststatus=2
 set ignorecase
+set tagcase=match
 "set nostartofline
 set lazyredraw
 
@@ -246,7 +159,7 @@ nnoremap <S-Down> 3<C-E>
 
 set mouse=a    
 set mousehide		" Hide the mouse when typing text
-"set mousemodel=popup_setpos
+set mousemodel=popup_setpos
 
 "set directory=~/tmp/vim//
 set directory=
@@ -259,7 +172,7 @@ set backupext=\.~
 set nobackup
 set nowritebackup
 
-set undodir=~/tmp/vim//
+set undodir=~/tmp/vim/
 set undofile
 
 set wildmenu
@@ -277,6 +190,7 @@ vmap  <M-Right>     dp`[v`]
 vmap  <M-Left>      dhP`[v`]
 vmap  <S-M-Right>     y`>gp`[v`]
 vmap  <S-M-Left>      yP`[v`]
+
 vmap <silent> <M-Up> <Esc>:'<,'>m '<-2<CR>gv
 vmap <silent> <M-Down> <Esc>:'<,'>m '>+1<CR>gv
 nmap <silent> <M-Down> :.m +1<CR>
@@ -313,7 +227,8 @@ map <M-/> <Esc>/\%V
 "replace samo u visual area
 map <M-:> <Esc>:'<,'>s/\%V
 "broji matcheve
-map <A-n> :%s/<C-r>///gn<Cr>
+" map <M-n> :%s/<C-r>///gn<Cr>
+map <M-n> :%s///gn<Cr>
 
 "ask before leaving changed buffer
 set confirm
@@ -321,10 +236,9 @@ set confirm
 "jump to tag
 "nmap <Leader>t <C-]>
 " map <C-LeftMouse> :tjump <C-R><C-W><Cr>
-" map <Leader>t :tjump <C-R><C-W><Cr>
+map <Leader>tj :tjump <C-R><C-W><Cr>
 inoremap <c-g> <c-x><c-]>
-
-
+"
 "put from 0 register to allow multiple putting
 vnoremap p "0p
 vnoremap P "0P
@@ -335,7 +249,7 @@ command! -nargs=1 Pdq silent new <args> | setlocal buftype=nofile bufhidden=hide
 "make R to read output of command (r !<command>)
 command! -nargs=* -complete=shellcmd R  new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
-command! -nargs=1 Find execute "new | setlocal buftype=nofile bufhidden=hide noswapfile | r !find . -path '*/.svn' -prune -o -type f | grep <args>" | :exe "match WarningMsg '<args>'" 
+command! -nargs=1 Trazi execute "new | setlocal buftype=nofile bufhidden=hide noswapfile | r !find . -path '*/.svn' -prune -o -type f | grep <args>" | :exe "match WarningMsg '<args>'" 
 command! -nargs=* Ls execute "new | setlocal buftype=nofile bufhidden=hide noswapfile | r !ls -rtlFh --group-directories-first --time-style='long-iso' <args>" | :normal $
 command! -nargs=1 Youngest execute "new | setlocal buftype=nofile bufhidden=hide noswapfile | r !find . -path '*/.svn/*' -prune -o -type f -print0 | xargs -r0 stat -c \\%y\\ \\%n | sort | tail -n<args>"
 command! -nargs=* Tree execute "new | setlocal buftype=nofile bufhidden=hide noswapfile | r !tree -n <args>"
@@ -361,6 +275,11 @@ nmap <Leader>pw :call Man(expand("<cword>"), 0)<cr>
 
 command! OpenInBrowser silent! execute "!firefox % &"
 command! Nautilus silent! execute "!nautilus %:p:h &"
+
+" apt-get install xvkbd
+command! RefreshFirefox silent execute '!xvkbd -window Firefox -text "\Cr"'
+command! RefreshChromium silent execute '!xvkbd -window Chromium -text "\Cr"'
+
 command! -nargs=1 Curl execute "r !curl -s <args>"
 command! -nargs=1 CurlVerbose execute "r !curl -s -v -D- -o- <args>"
 command! E execute "browse e"
@@ -383,6 +302,8 @@ command! FTvim silent! execute "setlocal filetype=vim"
 command! FTsql silent! execute "setlocal filetype=sql"
 command! FTtxt silent! execute "setlocal filetype=txt"
 command! FTjson silent! execute "setlocal filetype=json"
+command! FTsh silent! execute "setlocal filetype=sh"
+command! FTzsh silent! execute "setlocal filetype=zsh"
 
 " Add the virtualenv's site-packages to vim path
 " http://www.sontek.net/blog/detail/python-with-a-modular-ide-vim
@@ -420,9 +341,10 @@ imap ¤ %}
 " set tags=~/myvimtagss
 
 " let * to find but not to jump, numerical * jumps anyway :)
-nnoremap * *``
+" nnoremap * *``
+nnoremap + *``
 nnoremap g+ /\C\<\><cr>
-vnoremap g+ <Esc>/\C\<+\><cr>
+vnoremap g+ <Esc>/\C*<cr>
 command! -nargs=1 SearchKeyword execute "/\\C\\<<args>\\>"
 nmap <Space> /\C
 
@@ -447,23 +369,7 @@ set winaltkeys=no
 command! -range=% Reverse <line1>,<line2>g/^/m<line1>-1 
 "alternative reverselines
 "command -range=% !tac
-"
-so ~/.vim/pluginsrc.vim
-so ~/.vim/myfunctions.vim
-so ~/.vim/myminiplugs/statusline.vim
-"so ~/.vim/myminiplugs/qflistmanipulation.vim
-so ~/.vim/myminiplugs/toolkitgrep.vim
-so ~/.vim/myminiplugs/myminigrep.vim
-so ~/.vim/myminiplugs/indentmove.vim
-so ~/.vim/myminiplugs/prettydump.vim
-" so ~/.vim/myminiplugs/vcd.vim
-so ~/.vim/myminiplugs/uuid.vim
-so ~/.vim/myminiplugs/splitjoin.vim
-so ~/.vim/myminiplugs/keywordreplace.vim
 
-" so ~/.vim/myminiplugs/damien_conway.vim
-" so ~/.vim/myminiplugs/24dctags.vim
-" runtime! macros/matchit.vim
 
 " highlight dott ctermfg=magenta guifg=magenta gui=bold
 " call matchadd('dott', '\.')
@@ -497,14 +403,12 @@ map <M-8> 8gt
 " 
 :command! Diffoffall diffoff! \| windo set nowrap \| windo set noscrollbind \| windo set nocursorbind<Cr>
 
-"set cursorline
-"set cursorcolumn
-"" set cursorline
-"autocmd InsertEnter * set nocursorline
-"autocmd InsertLeave * set cursorline
-"" set cursorcolumn
-"autocmd InsertEnter * set nocursorcolumn
-"autocmd InsertLeave * set cursorcolumn
+set cursorline
+" set cursorcolumn
+" autocmd InsertEnter * set nocursorline
+" autocmd InsertLeave * set cursorline
+" autocmd InsertEnter * set nocursorcolumn
+" autocmd InsertLeave * set cursorcolumn
 
 function! ToggleLine()
     set cursorline!
@@ -517,4 +421,64 @@ inoremap <c-x><Char-46> :set iskeyword+=.<cr>a<c-n>
 inoremap <c-x><Char-45> :set iskeyword+=-<cr>a<c-n>
 autocmd CompleteDone * set iskeyword-=.
 autocmd CompleteDone * set iskeyword-=-
+imap <C-_> </<C-x><C-o><BS>
 
+" python << EOF
+" import os.path
+" import sys
+" import vim
+" sys.path.extend(
+" [
+"  '/home/vsajko/a1000_python/usr/lib64/python26.zip',
+"  '/home/vsajko/a1000_python/usr/lib64/python2.6',
+"  '/home/vsajko/a1000_python/usr/lib64/python2.6/plat-linux2',
+"  '/home/vsajko/a1000_python/usr/lib64/python2.6/lib-tk',
+"  '/home/vsajko/a1000_python/usr/lib64/python2.6/lib-old',
+"  '/home/vsajko/a1000_python/usr/lib64/python2.6/lib-dynload',
+"  '/home/vsajko/a1000_python/usr/lib64/python2.6/site-packages',
+"  '/home/vsajko/a1000_python/usr/lib/python2.6/site-packages',
+"  '/home/vsajko/a1000_python/usr/lib/python2.6/site-packages/setuptools-0.6c11-py2.6.egg-info',
+"  '/home/vsajko/a1000_python/usr/lib/python2.6/site-packages/IPython/extensions'
+"  ]
+" )
+" EOF
+
+" close quickfix windows
+nnoremap <silent><C-q> :execute"cclose\|lclose"<CR> 
+
+" equilise windows in tabs
+command Eqtabs tabdo execute "normal \<C-W>="
+" equilise windows in tabs
+command WinNoFix windo set nowinfixheight | set nowinfixwidth 
+
+set colorcolumn=80,100,120
+
+command! Cololight set background=light
+command! Colodark set background=dark
+
+
+" select last paste in visual mode
+" http://dalibornasevic.com/posts/43-12-vim-tips
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+" nmap <C-p> :pwd<cr>
+command! Cdb cd %:h
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"source ~/.vim/myminiplugs/qflistmanipulation.vim
+" source ~/.vim/myminiplugs/vcd.vim
+source ~/.vim/pluginsrc.vim
+source ~/.vim/myfunctions.vim
+source ~/.vim/myminiplugs/statusline.vim
+source ~/.vim/myminiplugs/toolkitgrep.vim
+source ~/.vim/myminiplugs/myminigrep.vim
+source ~/.vim/myminiplugs/indentmove.vim
+source ~/.vim/myminiplugs/prettydump.vim
+source ~/.vim/myminiplugs/uuid.vim
+source ~/.vim/myminiplugs/splitjoin.vim
+source ~/.vim/myminiplugs/keywordreplace.vim
+source ~/.vim/myminiplugs/inactivity.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/Private/.dotfiles_private/dots/.vim_private/privaterc.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" so ~/.vim/myminiplugs/damien_conway.vim
+" so ~/.vim/myminiplugs/24dctags.vim

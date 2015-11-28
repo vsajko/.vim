@@ -22,7 +22,7 @@ function! GuiTabTooltip()
         let label .= ' '
     endif
 
-    
+
     return label
 
 endfunction

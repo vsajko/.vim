@@ -21,11 +21,35 @@ let s:exclude.=" --exclude=tags"
 let s:options=" -IsrnH"
 let s:ridoflongerthan='300'
 let s:dellonglines="\\| grep -v '.\\{" . s:ridoflongerthan . ",\\}'"
+let s:dellonglines1="\\| grep -v '.\\{" . s:ridoflongerthan . ",\\}'"
 
-let &grepprg='grep ' . s:options . s:exclude . ' $* ' . s:dellonglines
+function! FindGrep(pattern, ...)
+    let prune=' -path "*/.svn" -prune -o '
+    let prune.=' -path "*/.git" -prune -o '
+    let prune.=' -path "*/.git" -prune -o '
+    let prune.=' -path "*.pyc" -prune -o '
+    " let prune = ''
+    " for s in a:000
+    "     echo s
+    " endfor
+    " echo a:pattern
+    if a:0 == 1
+        let &grepprg='find . ' . prune . ' -type f -print \| grep '  . a:1 . ' \| xargs grep -IsnH $* ' . s:dellonglines
+    elseif a:0 == 2
+        let &grepprg='find . ' . prune . ' -type f -name "'. a:2 .'" -print \| grep "'  . a:1 . '" \| xargs grep -IsnH $* ' . s:dellonglines
+    else
+        let &grepprg='grep ' . s:options . s:exclude . ' $* ' . s:dellonglines
+    endif
+    execute "silent! lgrep " . a:pattern
+    botright lopen
+    " exec "match WarningMsg '" . a:args . "'"
+    exec "redraw!"
+
+endfunction
            
 
 function! Mygrep(args)
+    let &grepprg='grep ' . s:options . s:exclude . ' $* ' . s:dellonglines
     execute "silent! lgrep " . a:args
     botright lopen
     " exec "match WarningMsg '" . a:args . "'"
@@ -33,6 +57,7 @@ function! Mygrep(args)
 endfunction
 
 function! Mygrepi(args)
+    let &grepprg='grep ' . s:options . s:exclude . ' $* ' . s:dellonglines
     execute "silent! lgrep -i " . a:args
     botright lopen
     " exec "match WarningMsg '" . a:args . "'"
@@ -41,6 +66,7 @@ endfunction
 
 command! -nargs=* -complete=file G call Mygrep(<q-args>)
 command! -nargs=* -complete=file Gi call Mygrepi(<q-args>)
+command! -nargs=* -complete=file Gf call FindGrep(<f-args>)
 
 " nnoremap <c-s> :G<Space>
 " cnoremap <c-s> G<Space>

@@ -40,3 +40,18 @@ snippet "remote_pdb"
 from remote_pdb import RemotePdb
 RemotePdb(host='10.${1:ip}', port=4444).set_trace()
 endsnippet
+
+snippet "logger_getLogger"
+logger = logging.getLogger(__name__)
+endsnippet
+
+snippet "logger"
+logger.${1:debug}("${2} %s", ${3})
+endsnippet
+
+snippet with_open
+with open('${1:filename}', 'r') as ${2:filevar}:
+	for line in $2:
+		# do something with line
+$2.closed
+endsnippet

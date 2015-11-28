@@ -1,5 +1,6 @@
-set guioptions=aAegimtTpl
-
+set guioptions=aAegimtT
+" map <c-s-v> "+p " fucks up <c-v>
+" lmap <c-s-v> "+p " map to insert and commant mode does not work :(
 "no visualbell and no beep
 set visualbell t_vb=
 
@@ -15,7 +16,9 @@ set toolbariconsize=tiny
 " set guifont=Anka/Coder\ Condensed\,\ Semi-Condensed\ 10
 " set guifont=Anka/Coder\ 10
 " set guifont=Envy\ Code\ R\ 10 
-set guifont=Fantasque\ Sans\ Mono\ 10
+" set guifont=Fantasque\ Sans\ Mono\ 10
+" set guifont=InputMonoCondensed\ Thin\ 10
+set guifont=InputMonoCondensed\ 10
 
 
 " set guifont=Inconsolata\ for\ Powerline\ Medium\ 10
@@ -29,7 +32,8 @@ set linespace=2
 set background=dark
 "colorscheme molokai
 "colorscheme earendel
-colorscheme earendel_my
+colorscheme grayish_my
+" colorscheme earendel_my
 " colorscheme gruvbox
 
 amenu icon=~/.vim/pixmaps/insertTime.xpm ToolBar.InsertTime <ESC><ESC>:execute "normal a" .  strftime("%FT%T")<CR>
@@ -78,15 +82,23 @@ nmenu Mapsreminder.alt_y<tab>ys :
 " 
 so ~/.vim/myminiplugs/fullscreen.vim
 so ~/.vim/myminiplugs/guitabtooltips.vim
+so ~/.vim/myminiplugs/guitablabel.vim
 " so ~/.vim/myminiplugs/balloon_location.vim
 so ~/.vim/myminiplugs/fontsize.vim
 
 command! Mc execute 'silent !xfce4-terminal --icon MidnightCommander -x bash -c "MYVIM=' . v:servername . ' EDITOR=gvim_mc_wrap.sh mc"'
-command! Ranger execute 'silent !xfce4-terminal --icon MidnightCommander -x bash -c "MYVIM=' . v:servername . ' ranger"'
+" command! Ranger execute 'silent !xfce4-terminal --icon MidnightCommander -x bash -c "MYVIM=' . v:servername . ' ranger"'
+command! Ranger execute 'silent !xterm -e ranger'
+" command! Rangerc execute 'silent !xfce4-terminal --icon MidnightCommander -x bash -c "MYVIM=' . v:servername . ' ranger %:h"'
+command! Rangerc execute 'silent !EDITOR="gvim --servername" '. v:servername . ' --remote-tab ranger %:h"'
+" command! Rangerr execute 'silent !EDITOR="gvim --servername '. v:servername . ' --remote-tab " xterm -e ranger %:h'
+command! Rangerr execute 'silent !urxvt -e ranger'
 
 function! Make_wrapper()
     let cont = [ "#!/bin/bash", "gvim --servername " . v:servername . " --remote-tab $*"]
     call writefile(cont, glob("~/bin/gvim_wrapper.sh"))
+    let cont1 = [ 'gvim --servername ' . v:servername . ' --remote-send ":Unite file_rec -input=$*<cr>"' ]
+    call writefile(cont1, glob("~/bin/gvim_wrapper_unite_file_rec.sh"))
 endfunction
 command! Makewrapper call Make_wrapper()
 
@@ -96,6 +108,10 @@ function! EditRemote(sname, fname)
 endfunction
 
 command! -nargs=* -complete=file RemoteEdit call EditRemote(<f-args>)
+command! MakeDesktopFile call CreateDesktopFile()
+
+
 
 " set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor,a:blinkon0
+cmap <A-BS> <C-W>

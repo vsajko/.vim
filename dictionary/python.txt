@@ -109,3 +109,5 @@ sorted
 intern
 self
 cls
+__nonzero__
+__bool__
